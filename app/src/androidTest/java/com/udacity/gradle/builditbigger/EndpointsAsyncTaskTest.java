@@ -7,8 +7,6 @@ import android.support.v4.util.Pair;
 import android.test.ApplicationTestCase;
 import android.text.TextUtils;
 
-import org.junit.Test;
-
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 
@@ -52,5 +50,7 @@ public class EndpointsAsyncTaskTest extends ApplicationTestCase<Application> {
         //test the response
         assertNull(mError);
         assertFalse(TextUtils.isEmpty(mJokeString));
+
+
     }
 }

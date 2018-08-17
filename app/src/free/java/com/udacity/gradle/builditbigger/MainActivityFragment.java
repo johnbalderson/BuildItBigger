@@ -22,6 +22,7 @@ import java.util.Random;
 public class MainActivityFragment extends Fragment implements View.OnClickListener{
 
     private Context mContext;
+    public int jokeCount = 10;
 
     public MainActivityFragment() {
     }
@@ -38,10 +39,10 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
 
-        Button jokeButton = (Button)root.findViewById(R.id.tell_joke_button);
+        Button jokeButton = root.findViewById(R.id.tell_joke_button);
         jokeButton.setOnClickListener(this);
 
-       AdView mAdView = (AdView) root.findViewById(R.id.adView);
+       AdView mAdView =  root.findViewById(R.id.adView);
         // Create an ad request. Check logcat output for the hashed device ID to
         // get test ads on a physical device. e.g.
         // "Use AdRequest.Builder.addTestDevice("ABCDEF012345") to get test ads on this device."
@@ -58,7 +59,7 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
     @Override
     public void onClick(View view) {
         Random random = new Random();
-        int randomInt = random.nextInt(10);
+        int randomInt = random.nextInt(jokeCount);
 
         new EndpointsAsyncTask().execute(new Pair<Context, Integer>(mContext, randomInt));
     }
