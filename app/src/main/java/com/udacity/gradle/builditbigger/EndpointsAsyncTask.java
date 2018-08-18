@@ -23,7 +23,7 @@ import java.util.concurrent.ExecutionException;
 public class EndpointsAsyncTask extends AsyncTask<Pair<Context, Integer>, Void, String> {
 
     private static MyApi myApiService = null;
-    private static String JOKE_FROM_JAVA = "joke from java";
+    private static String JAVA_JOKE = "Java Joke";
 
     private getJokeListener mListener = null;
     private Exception mError = null;
@@ -74,7 +74,7 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context, Integer>, Void, 
         }
 
         Intent intent = new Intent(context, AndroidJokeActivity.class);
-        intent.putExtra(JOKE_FROM_JAVA, result);
+        intent.putExtra(JAVA_JOKE, result);
         context.startActivity(intent);
 
     }

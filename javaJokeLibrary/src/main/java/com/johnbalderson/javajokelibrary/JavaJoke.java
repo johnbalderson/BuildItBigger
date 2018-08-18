@@ -1,6 +1,6 @@
 package com.johnbalderson.javajokelibrary;
 
-public class JavaJoke {
+public final class JavaJoke {
 
     public static String[] JokesArray =
             {"Why did the computer break up with the internet? \n\n There was no 'Connection' ",
